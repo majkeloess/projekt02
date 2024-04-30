@@ -24,7 +24,7 @@ int main()
 
   // Wypożycz książki przez użytkowników
   library.borrowBook("Batman", user1);
-  library.borrowBook("Wiedźmin", user2); // Próba wypożyczenia nieistniejącej książki
+  library.borrowBook("Folkwark Zwierzęcy", user2); // Próba wypożyczenia nieistniejącej książki
   library.borrowBook("Batman", user2);   // Próba wypożyczenia niedostępnej już książki
   library.borrowBook("1984", user2);
 

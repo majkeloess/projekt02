@@ -3,18 +3,17 @@
 
 #include "IKsiazka.h"
 
-class Czasopismo: private IKsiazka
+class Czasopismo : private IKsiazka
 {
-    
-    private:
 
+private:
     std::string title, author, genre;
     int id, shelf;
     Czasopismo(std::string title, std::string author, int id, std::string genre, int shelf);
 
-    public:
-
-    static IKsiazka* create(std::string title, std::string author, int id, std::string genre, int shelf){
+public:
+    static IKsiazka *create(std::string title, std::string author, int id, std::string genre, int shelf)
+    {
         return new Czasopismo(title, author, id, genre, shelf);
     }
 
@@ -23,8 +22,6 @@ class Czasopismo: private IKsiazka
     int getId() const override;
 
     std::string getTytul() const override;
-
 };
-
 
 #endif
