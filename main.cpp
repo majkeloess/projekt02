@@ -9,23 +9,24 @@
 int main()
 {
   Library library;
-
-  IKsiazka *ksiazka = Ksiazka::create("W pustyni i w puszczy", "Henryk Sienkiewicz", 1, "Przygodowa", 5);
+  IKsiazka *ksiazka_1 = Ksiazka::create("Język C++", "Stephen Prata", 1, "Naukowa", 3);
+  IKsiazka *ksiazka_2 = Ksiazka::create("1984", "George Orwell", 1, "Fantastyka", 5);
   IKsiazka *czasopismo = Czasopismo::create("National Geographic", "John Doe", 2, "Przyroda", 7);
   IKsiazka *komiks = Komiks::create("Batman", "Bob Kane", 3, "Superbohaterowie", 9);
 
-  library.addMaterial(ksiazka);
+  library.addMaterial(ksiazka_1);
+  library.addMaterial(ksiazka_2);
   library.addMaterial(czasopismo);
   library.addMaterial(komiks);
 
-  User user1("Jan Piotrowski");
-  User user2("Anna Pietruszka");
+  User user1("Grzegorz Brzęczyszczykiewicz");
+  User user2("Arnold Schwarzenegger");
 
   // Wypożycz książki przez użytkowników
   library.borrowBook("Batman", user1);
   library.borrowBook("Wiedźmin", user2); // Próba wypożyczenia nieistniejącej książki
   library.borrowBook("Batman", user2);   // Próba wypożyczenia niedostępnej już książki
-  library.borrowBook("W pustyni i w puszczy", user2);
+  library.borrowBook("1984", user2);
 
   // Wyświetl informacje o wypożyczonych książkach
   std::cout << "\nKonto użytkowinka " << user1.getName() << ":\n";
@@ -35,9 +36,9 @@ int main()
   user2.displayBorrowedBooks();
 
   // Zwróć książki
-  library.returnBook("W pustyni i w puszczy", user1);
+  library.returnBook("1984", user1);
   library.returnBook("Batman", user1);
-  library.returnBook("W pustyni i w puszczy", user2);
+  library.returnBook("1984", user2);
 
   // Wyświetl informacje o wszystkich książkach w bibliotece
   std::cout << "\nWszystkie książki w bibliotece:\n";
@@ -45,49 +46,3 @@ int main()
 
   return 0;
 }
-
-// Spodziewany output
-/*
-
-Użytkownik Jan Piotrowski wypożyczył książkę: Batman
-Przepraszamy, książka "Wiedźmin" jest już wypożyczona lub nie istnieje.
-Przepraszamy, książka "Batman" jest już wypożyczona lub nie istnieje.
-Użytkownik Anna Pietruszka wypożyczył książkę: W pustyni i w puszczy
-
-Konto użytkowinka Jan Piotrowski:
-Lista wypożyczonych książek przez użytkownika:
-Tytuł: Batman
-
-Konto użytkowinka Anna Pietruszka:
-Lista wypożyczonych książek przez użytkownika:
-Tytuł: W pustyni i w puszczy
-
-Przepraszamy, książka W pustyni i w puszczy nie została wypożyczona przez tego użytkownika lub nie istnieje.
-Użytkownik Jan Piotrowski zwrócił książkę: Batman
-Użytkownik Anna Pietruszka zwrócił książkę: W pustyni i w puszczy
-
-Wszystkie książki w bibliotece:
-
-Lista książek w bibliotece:
-Tytuł: W pustyni i w puszczy
-Autor: Henryk Sienkiewicz
-Id ksiazki: 1
-Gatunek: Przygodowa
-Na półce:  5
-Status: Dostępny
-
-Tytuł: National Geographic
-Autor: John Doe
-Id ksiazki: 2
-Gatunek: Przyroda
-Na półce:  7
-Status: Dostępny
-
-Tytuł: Batman
-Autor: Bob Kane
-Id ksiazki: 3
-Gatunek: Superbohaterowie
-Na półce: 9
-Status: Dostępny
-
-*/

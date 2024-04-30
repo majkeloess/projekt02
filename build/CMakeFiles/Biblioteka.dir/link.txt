@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/Biblioteka.dir/main.cpp.o CMakeFiles/Biblioteka.dir/src/Czasopismo.cpp.o CMakeFiles/Biblioteka.dir/src/Komiks.cpp.o CMakeFiles/Biblioteka.dir/src/Ksiazka.cpp.o CMakeFiles/Biblioteka.dir/src/Library.cpp.o CMakeFiles/Biblioteka.dir/src/User.cpp.o -o Biblioteka 
