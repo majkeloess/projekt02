@@ -1,0 +1,5 @@
+/home/majkeloess/Desktop/project02/build/CMakeFiles/Biblioteka.dir
+/home/majkeloess/Desktop/project02/build/CMakeFiles/run.dir
+/home/majkeloess/Desktop/project02/build/CMakeFiles/check.dir
+/home/majkeloess/Desktop/project02/build/CMakeFiles/edit_cache.dir
+/home/majkeloess/Desktop/project02/build/CMakeFiles/rebuild_cache.dir
